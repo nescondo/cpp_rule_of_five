@@ -30,10 +30,12 @@ int main(int argc, char** argv){
 	Car a(1985, "Toyota Hilux");
 	ServiceRecord first("Oil change.", 9.95f);
 	a.addRecord(first);
+    //std::cout << "Car a: " << a << std::endl;
 
 	Car b(a);
 	first = ServiceRecord("Radiator flush.", 19.95);
-	b.addRecord(first);
+	b.addRecord(first); 
+    //std::cout << "Car b: " << b << std::endl;
 
 	std::vector<Car> inventory;
 	inventory.push_back(a);

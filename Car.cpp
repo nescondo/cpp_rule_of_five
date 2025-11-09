@@ -9,6 +9,12 @@ Car::Car(int year, std::string model){
 	this->model = model;
 }
 
+Car::Car(const Car& other) {
+    this->id = Car::current_id++;
+    this->year = other.year;
+    this->model = other.model;
+}
+
 int Car::getId() const {
 	return this->id;
 }
