@@ -31,11 +31,14 @@ int main(int argc, char** argv){
 	ServiceRecord first("Oil change.", 9.95f);
 	a.addRecord(first);
     //std::cout << "Car a: " << a << std::endl;
+    std::cout << "Car a id: " << a.getId() << std::endl; //ensure unique car a id
 
 	Car b(a);
 	first = ServiceRecord("Radiator flush.", 19.95);
 	b.addRecord(first); 
     //std::cout << "Car b: " << b << std::endl;
+    std::cout << "Car b id: " << b.getId() << std::endl; //ensure unique car b id
+    
 
 	std::vector<Car> inventory;
 	inventory.push_back(a);
@@ -43,6 +46,7 @@ int main(int argc, char** argv){
 
 	Car c(b);
 	c.setModel("Ford F150");
+    std::cout << "Car c id: " << c.getId() << std::endl; //ensure unique car c id
 
 	std::cout << "Customer wants to trade in " << c << std::endl;
 	std::cout << "They want to get " << a << std::endl;

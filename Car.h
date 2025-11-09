@@ -16,6 +16,8 @@ class Car {
 		std::string getModel() const;
 		std::vector<ServiceRecord> getRecords() const;
 		void addRecord(ServiceRecord);
+    
+        Car& operator=(const Car& other);
 
 		friend std::ostream& operator<<(std::ostream& of, const Car& car);
 	private:

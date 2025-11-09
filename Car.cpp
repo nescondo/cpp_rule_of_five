@@ -15,6 +15,16 @@ Car::Car(const Car& other) {
     this->model = other.model;
 }
 
+Car& Car::operator=(const Car& other) {
+    if (this != &other) {
+        this->id = other.id;
+        this->year = other.year;
+        this->model = other.model;
+    } 
+    
+    return *this;
+}
+
 int Car::getId() const {
 	return this->id;
 }
