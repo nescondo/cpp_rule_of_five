@@ -9,6 +9,7 @@ class Car {
 	public:
 		Car(int, std::string);
         Car(const Car& other);
+        Car(Car&& other) noexcept;
 		int getId() const;
 		void setYear(int);
 		int getYear() const;
