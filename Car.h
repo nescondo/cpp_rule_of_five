@@ -19,6 +19,7 @@ class Car {
 		void addRecord(ServiceRecord);
     
         Car& operator=(const Car& other);
+        Car& operator=(Car&& other) noexcept;
 
 		friend std::ostream& operator<<(std::ostream& of, const Car& car);
 	private:

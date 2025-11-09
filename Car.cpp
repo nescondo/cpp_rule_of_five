@@ -10,7 +10,7 @@ Car::Car(int year, std::string model){
 }
 
 Car::Car(const Car& other) {
-    std::cout << "Copy constructor called" << std::endl;
+    //std::cout << "Copy constructor called" << std::endl;
 
     this->id = Car::current_id++;
     this->year = other.year;
@@ -30,13 +30,27 @@ Car& Car::operator=(const Car& other) {
 }
 
 Car::Car(Car&& other) noexcept {
-    std::cout << "Move constructor called" << std::endl;
+    //std::cout << "Move constructor called" << std::endl;
 
     this->id = other.id;
     this->year = other.year;
     this->model = other.model; 
+    this->records = other.records;
 
     //we still want to keep the data in the other Car object because we use it in makeTrade
+}
+
+Car& Car::operator=(Car&& other) noexcept {
+    std::cout << "Move assignment operator called" << std::endl;
+
+    if (this != &other) {
+        this->id = other.id;
+        this->year = other.year;
+        this->model = other.model;
+        this->records = other.records;
+    }
+    
+    return *this;
 }
 
 int Car::getId() const {
