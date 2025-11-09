@@ -27,6 +27,7 @@ void makeTrade(std::vector<Car>& inventory, Car& tradein, Car& tradeout){
 }
 
 int main(int argc, char** argv){
+    std::cout<< "Nikolai Escondo, collaborated with Benjamin Kolhoff" << std::endl;
 	Car a(1985, "Toyota Hilux");
 	ServiceRecord first("Oil change.", 9.95f);
 	a.addRecord(first);
