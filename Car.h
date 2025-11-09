@@ -20,6 +20,7 @@ class Car {
     
         Car& operator=(const Car& other);
         Car& operator=(Car&& other) noexcept;
+        bool operator<(const Car& other) const;
 
 		friend std::ostream& operator<<(std::ostream& of, const Car& car);
 	private:

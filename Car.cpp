@@ -18,7 +18,7 @@ Car::Car(const Car& other) {
 }
 
 Car& Car::operator=(const Car& other) {
-    std::cout << "Copy assignment operator called" << std::endl;
+    //std::cout << "Copy assignment operator called" << std::endl;
 
     if (this != &other) {
         this->id = other.id;
@@ -41,7 +41,7 @@ Car::Car(Car&& other) noexcept {
 }
 
 Car& Car::operator=(Car&& other) noexcept {
-    std::cout << "Move assignment operator called" << std::endl;
+    //std::cout << "Move assignment operator called" << std::endl;
 
     if (this != &other) {
         this->id = other.id;
@@ -51,6 +51,24 @@ Car& Car::operator=(Car&& other) noexcept {
     }
     
     return *this;
+}
+
+bool Car::operator<(const Car& other) const {
+    //std::cout << "less than (<) operator called" << std::endl;
+    
+    double thisTot;
+    double otherTot;
+    
+    for (size_t i=0; i<this->records.size(); ++i) {
+        thisTot += this->records[i].getCost(); 
+    }
+    
+    for (size_t i=0; i<other.records.size(); ++i) {
+        otherTot += other.records[i].getCost();
+    }
+    
+    return thisTot < otherTot;
+    
 }
 
 int Car::getId() const {
